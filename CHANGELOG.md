@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.0.0 (2026-09-07)
+
+### Features
+
+* implement Tibber GraphQL API client, models, service, and CLI ([801132b](https://github.com/WebProject-xyz/php-tibber-api-client/commit/801132b4ffb51bfeef653291275dcc9bcea4b4c9))
+* inital rename from template ([eb8c766](https://github.com/WebProject-xyz/php-tibber-api-client/commit/eb8c7665bc6c7d147032fbabf1d2377dc9c58107))
+
 ## [1.0.2](https://github.com/WebProject-xyz/php-package-template/compare/1.0.1...1.0.2) (2026-09-04)
 
 ### Bug Fixes

@@ -12,8 +12,18 @@
   ],
   "homepage": "https://www.webproject.xyz",
   "require": {
-    "php": "~8.5.0"
+    "php": "~8.5.0",
+    "phpdocumentor/reflection-docblock": "^5.6",
+    "symfony/console": "^7.4 || ^8.1",
+    "symfony/dotenv": "^7.4 || ^8.1",
+    "symfony/http-client": "^7.4 || ^8.1",
+    "symfony/property-access": "^7.4 || ^8.1",
+    "symfony/property-info": "^7.4 || ^8.1",
+    "symfony/serializer": "^7.4 || ^8.1"
   },
+  "bin": [
+    "bin/tibber"
+  ],
   "require-dev": {
     "codeception/codeception": "^5.3.5",
     "codeception/module-asserts": "^3.3.0",

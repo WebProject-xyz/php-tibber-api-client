@@ -1,0 +1,64 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+$autoloadFiles = [
+    __DIR__ . '/../vendor/autoload.php',
+    __DIR__ . '/../../../autoload.php',
+];
+
+$autoloaderFound = false;
+foreach ($autoloadFiles as $autoloadFile) {
+    if (file_exists($autoloadFile)) {
+        require_once $autoloadFile;
+        $autoloaderFound = true;
+        break;
+    }
+}
+
+if (!$autoloaderFound) {
+    fwrite(STDERR, "Unable to find composer autoload.php. Run 'composer install'.\n");
+    exit(1);
+}
+
+use Symfony\Component\Console\Application;
+use Symfony\Component\Dotenv\Dotenv;
+use WebProject\TibberApiClient\Command\ConsumptionCommand;
+use WebProject\TibberApiClient\Command\CurrentPriceCommand;
+use WebProject\TibberApiClient\Command\PushNotificationCommand;
+use WebProject\TibberApiClient\Command\SchemaDumpCommand;
+use WebProject\TibberApiClient\Command\TodayPricesCommand;
+use WebProject\TibberApiClient\Command\TomorrowPricesCommand;
+use WebProject\TibberApiClient\Command\ViewerCommand;
+
+// Attempt to load .env / .env.local from current working directory or project root
+if (class_exists(Dotenv::class)) {
+    $dotenv = new Dotenv();
+    $paths = [
+        getcwd() . '/.env.local',
+        getcwd() . '/.env',
+        __DIR__ . '/../.env.local',
+        __DIR__ . '/../.env',
+    ];
+
+    foreach ($paths as $path) {
+        if ($path !== false && file_exists($path)) {
+            $dotenv->load($path);
+        }
+    }
+}
+
+$application = new Application('Tibber API Client CLI', '1.0.0');
+
+$application->addCommands([
+    new ViewerCommand(),
+    new CurrentPriceCommand(),
+    new TodayPricesCommand(),
+    new TomorrowPricesCommand(),
+    new ConsumptionCommand(),
+    new PushNotificationCommand(),
+    new SchemaDumpCommand(),
+]);
+
+$application->run();

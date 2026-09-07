@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace WebProject\PhpPackageTemplate\Tests\Support;
+namespace WebProject\TibberApiClient\Tests\Support;
 
 /**
  * Inherited Methods.

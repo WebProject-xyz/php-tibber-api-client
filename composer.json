@@ -1,6 +1,6 @@
 {
-  "name": "webproject-xyz/php-package-template",
-  "description": "php-package-description",
+  "name": "webproject-xyz/php-tibber-api-client",
+  "description": "a php tibber api client",
   "license": "MIT",
   "type": "library",
   "authors": [
@@ -15,22 +15,23 @@
     "php": "~8.5.0"
   },
   "require-dev": {
-    "roave/security-advisories": "dev-latest",
     "codeception/codeception": "^5.3.5",
     "codeception/module-asserts": "^3.3.0",
     "friendsofphp/php-cs-fixer": "^3.95.15",
     "phpro/grumphp": "^2.22.0",
     "phpstan/phpstan": "^2.2.5",
-    "webproject-xyz/codeception-module-ai-reporter": "^2.0.0"
+    "roave/security-advisories": "dev-latest",
+    "webproject-xyz/codeception-module-ai-reporter": "^2.0.0",
+    "webproject-xyz/php-cs-fixer-config": "^1.1"
   },
   "autoload": {
     "psr-4": {
-      "WebProject\\PhpPackageTemplate\\": "src/"
+      "WebProject\\TibberApiClient\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "WebProject\\PhpPackageTemplate\\Tests\\": "tests/"
+      "WebProject\\TibberApiClient\\Tests\\": "tests/"
     }
   },
   "config": {

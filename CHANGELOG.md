@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.1](https://github.com/WebProject-xyz/php-tibber-api-client/compare/1.0.0...1.0.1) (2026-09-22)
+
+### Bug Fixes
+
+* **deps:** update and bump deps ([5767cf0](https://github.com/WebProject-xyz/php-tibber-api-client/commit/5767cf0055a47a50a24f6bd0d4e6cec9bc7f1665))
+
 ## 1.0.0 (2026-09-07)
 
 ### Features

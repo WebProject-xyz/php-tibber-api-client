@@ -13,26 +13,23 @@
   "homepage": "https://www.webproject.xyz",
   "require": {
     "php": "~8.5.0",
-    "phpdocumentor/reflection-docblock": "^5.6",
-    "symfony/console": "^7.4 || ^8.1",
-    "symfony/dotenv": "^7.4 || ^8.1",
-    "symfony/http-client": "^7.4 || ^8.1",
-    "symfony/property-access": "^7.4 || ^8.1",
-    "symfony/property-info": "^7.4 || ^8.1",
-    "symfony/serializer": "^7.4 || ^8.1"
+    "phpdocumentor/reflection-docblock": "^5.6.7",
+    "symfony/console": "^7.4 || ^8.1.7",
+    "symfony/dotenv": "^7.4 || ^8.1.6",
+    "symfony/http-client": "^7.4 || ^8.1.7",
+    "symfony/property-access": "^7.4 || ^8.1.4",
+    "symfony/property-info": "^7.4 || ^8.1.7",
+    "symfony/serializer": "^7.4 || ^8.1.7"
   },
-  "bin": [
-    "bin/tibber"
-  ],
   "require-dev": {
     "codeception/codeception": "^5.3.5",
     "codeception/module-asserts": "^3.3.0",
-    "friendsofphp/php-cs-fixer": "^3.95.15",
-    "phpro/grumphp": "^2.22.0",
-    "phpstan/phpstan": "^2.2.5",
+    "friendsofphp/php-cs-fixer": "^3.95.27",
+    "phpro/grumphp": "^2.23.0",
+    "phpstan/phpstan": "^2.2.14",
     "roave/security-advisories": "dev-latest",
-    "webproject-xyz/codeception-module-ai-reporter": "^2.0.0",
-    "webproject-xyz/php-cs-fixer-config": "^1.1"
+    "webproject-xyz/codeception-module-ai-reporter": "^2.1.0",
+    "webproject-xyz/php-cs-fixer-config": "^1.1.3"
   },
   "autoload": {
     "psr-4": {
@@ -44,6 +41,9 @@
       "WebProject\\TibberApiClient\\Tests\\": "tests/"
     }
   },
+  "bin": [
+    "bin/tibber"
+  ],
   "config": {
     "allow-plugins": {
       "composer/package-versions-deprecated": true,
@@ -59,15 +59,15 @@
   "scripts": {
     "cs:check": "XDEBUG_MODE=off php-cs-fixer fix --allow-risky=yes --dry-run --diff --show-progress=dots",
     "cs:fix": "XDEBUG_MODE=off php-cs-fixer fix --show-progress=none --allow-risky=yes",
-    "stan": "XDEBUG_MODE=off phpstan analyse --no-progress --no-ansi --memory-limit=-1",
-    "test": "XDEBUG_MODE=off codecept run --report",
-    "test:coverage": "XDEBUG_MODE=coverage codecept run --coverage --coverage-xml=coverage.xml --xml  --report",
-    "test:build": "XDEBUG_MODE=off codecept build",
     "qa": [
       "@test:build",
       "@cs:fix",
       "@test",
       "@stan"
-    ]
+    ],
+    "stan": "XDEBUG_MODE=off phpstan analyse --no-progress --no-ansi --memory-limit=-1",
+    "test": "XDEBUG_MODE=off codecept run --report",
+    "test:build": "XDEBUG_MODE=off codecept build",
+    "test:coverage": "XDEBUG_MODE=coverage codecept run --coverage --coverage-xml=coverage.xml --xml  --report"
   }
 }
